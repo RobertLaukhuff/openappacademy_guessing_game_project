@@ -2,7 +2,7 @@ class GuessingGame
   def initialize(min, max)
     @min = min
     @max = max
-    @secret_num = rand(max)
+    @secret_num = rand(min..max)
     @num_attempts = 0
     @game_over = false
   end
@@ -28,7 +28,7 @@ class GuessingGame
   end
 
   def ask_user
-    print "enter a number"
+    print "enter a number: "
     guess = gets.chomp.to_i
     check_num(guess)
   end
